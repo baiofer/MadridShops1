@@ -17,11 +17,11 @@ class ActivityCell: UICollectionViewCell {
     @IBOutlet weak var activityCellNameLabel: UILabel!
     @IBOutlet weak var activityCellOpeningLabel: UILabel!
     
-    func refresh(activity: ActivityCD, map: MKMapView) {
+    func refresh(activity: ActivityCD) {
         self.activity = activity
         self.activityCellNameLabel.text = activity.name?.uppercased()
         self.activityCellOpeningLabel.text = activity.openingHours?.uppercased()
         self.activity?.logo?.loadImage(into: activityCellImage)
         
-        addLocation(latitude: (activity.latitude)!, longitude: (activity.longitude)!, map: map, title: (activity.name)!, subtitle: (activity.address)!, adjust: 0.01)    }
+    }
 }

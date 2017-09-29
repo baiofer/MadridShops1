@@ -38,6 +38,22 @@ class ShopsViewController: UIViewController, MKMapViewDelegate {
         return _fetchedResultsController!
     }
     
+    func getShop(name: String) -> ShopCD {
+        let fetchRequest1: NSFetchRequest<ShopCD> = ShopCD.fetchRequest()
+        fetchRequest1.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
+        let fetchedResultsController1 = NSFetchedResultsController(fetchRequest: fetchRequest1, managedObjectContext: self.context!, sectionNameKeyPath: nil, cacheName: nil)
+        do {
+            try fetchedResultsController1.performFetch()
+        } catch {
+            let nserror = error as NSError
+            fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+        }
+        let consulta: [ShopCD] = fetchedResultsController1.fetchedObjects!
+        let shop = consulta.filter { (shop) -> Bool in
+            return shop.name == name
+        }
+        return shop[0]
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,28 +75,40 @@ class ShopsViewController: UIViewController, MKMapViewDelegate {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "ShowShopDetailSegue" {
+        if (segue.identifier == "ShowShopDetailSegue") {
             let vc = segue.destination as! ShopDetailViewController
-            
             let shopCD: ShopCD = sender as! ShopCD
             vc.shop = shopCD
+        }
+        if (segue.identifier == "ShowShopDetailSegueFromAnnotation") {
+            let vc1 = segue.destination as! ShopDetailViewController
+            let shopCD: ShopCD = sender as! ShopCD
+            vc1.shop = shopCD
         }
     }
     
     func addLocations() {
+        let madridLocation = CLLocation(latitude: 40.41889, longitude: -3.69194)
+        self.shopsMap.setCenter(madridLocation.coordinate, animated: true)
         
-        let londonLocation = CLLocation(latitude: 51.5073509, longitude: -0.1277583)
-        self.shopsMap.setCenter(londonLocation.coordinate, animated: true)
+        let region = MKCoordinateRegion(center: madridLocation.coordinate, span: MKCoordinateSpan(latitudeDelta: 0.06, longitudeDelta: 0.06))
+        let reg = self.shopsMap.regionThatFits(region)
+        self.shopsMap.setRegion(reg, animated: true)
         
-        //let region = MKCoordinateRegion(center: londonLocation.coordinate, span: MKCoordinateSpan(latitudeDelta: 1, longitudeDelta: 1))
-        //let reg = self.mapView.regionThatFits(region)
-        //self.mapView.setRegion(reg, animated: true)
-        
-        
-        //let n=Note(coordinate: londonLocation.coordinate, title: "Hello", subtitle: "Hello sub")
-        //self.mapView.addAnnotation(n)
+        for i in 0 ..< self.fetchedResultsController.sections![0].numberOfObjects {
+            let index = IndexPath(row: i, section: 0)
+            let shop: ShopCD = fetchedResultsController.object(at: index)
+            let location = CLLocation(latitude: Double(shop.latitude!)!, longitude: Double(shop.longitude!)!)
+            let note = Note(coordinate: location.coordinate, title: shop.name!, subtitle: shop.address!)
+            shopsMap.addAnnotation(note)
+        }
     }
     
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        print(view)
+        let shop = getShop(name: view.annotation?.title as! String)
+        self.performSegue(withIdentifier: "ShowShopDetailSegueFromAnnotation", sender: shop)
+    }
 }
 
 

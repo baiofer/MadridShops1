@@ -57,13 +57,6 @@
                                     <segue destination="rOd-Vy-O1D" kind="show" identifier="ShowShopsSegue" id="vAM-zR-vxV"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wQG-yK-f7F">
-                                <rect key="frame" x="91" y="308" width="192" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <activityIndicatorView hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="3a6-zu-czH">
                                 <rect key="frame" x="169" y="565" width="37" height="37"/>
                                 <color key="color" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -83,6 +76,12 @@
                                     <segue destination="h2c-2b-l0w" kind="show" identifier="ShowActivitiesSegue" id="9pl-pS-cTe"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wQG-yK-f7F">
+                                <rect key="frame" x="30" y="483" width="315" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -91,8 +90,11 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="35h-4K-KbG" secondAttribute="trailing" constant="35" id="3iS-1n-A6F"/>
                             <constraint firstItem="8wv-M9-mTS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="35" id="6xa-bg-euh"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="3a6-zu-czH" secondAttribute="bottom" constant="65" id="8He-ug-Hau"/>
+                            <constraint firstItem="wQG-yK-f7F" firstAttribute="top" secondItem="PCB-zS-bUs" secondAttribute="bottom" constant="20" id="Cia-q1-pjU"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wQG-yK-f7F" secondAttribute="trailing" constant="30" id="PhH-KK-VIz"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="8wv-M9-mTS" secondAttribute="bottom" constant="60" id="VbS-dx-ELK"/>
                             <constraint firstItem="PCB-zS-bUs" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Zx7-du-E1S"/>
+                            <constraint firstItem="wQG-yK-f7F" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="dcr-n2-N8r"/>
                             <constraint firstItem="PCB-zS-bUs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="eDy-OW-iAr"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="35h-4K-KbG" secondAttribute="bottom" constant="60" id="gcT-L3-M4j"/>
                         </constraints>
@@ -108,7 +110,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-140" y="185.75712143928038"/>
+            <point key="canvasLocation" x="116" y="185.75712143928038"/>
         </scene>
         <!--Shops-->
         <scene sceneID="VpS-5I-0v8">
@@ -204,11 +206,12 @@
                         <outlet property="shopsCollectionView" destination="m5b-AH-o1Z" id="wb4-sh-fJ7"/>
                         <outlet property="shopsMap" destination="SBV-S8-Z6I" id="aBp-iy-eea"/>
                         <segue destination="mTm-h9-uur" kind="show" identifier="ShowShopDetailSegue" id="Dx2-R4-cbJ"/>
+                        <segue destination="mTm-h9-uur" kind="show" identifier="ShowShopDetailSegueFromAnnotation" id="XrJ-5G-c5p"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4qg-gO-oD2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="376" y="-159"/>
+            <point key="canvasLocation" x="902" y="-160"/>
         </scene>
         <!--Shop Detail View Controller-->
         <scene sceneID="1pr-SX-s2j">
@@ -252,7 +255,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D56-tM-8fB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="864" y="-160"/>
+            <point key="canvasLocation" x="1596" y="-160"/>
         </scene>
         <!--Activities-->
         <scene sceneID="qmS-C9-3iq">
@@ -349,11 +352,12 @@
                         <outlet property="activitiesCollectionView" destination="xvT-jG-dvx" id="9sN-pM-Svp"/>
                         <outlet property="activitiesMap" destination="1IP-9r-U5r" id="Wmh-hK-NAh"/>
                         <segue destination="czX-hJ-119" kind="show" identifier="ShowActivityDetailSegue" id="NEU-aw-kT0"/>
+                        <segue destination="czX-hJ-119" kind="show" identifier="ShowActivityDetailSegueFromAnnotation" id="t4G-Ga-iEa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ldE-el-Ksq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="376" y="584"/>
+            <point key="canvasLocation" x="902" y="570"/>
         </scene>
         <!--Activity Detail View Controller-->
         <scene sceneID="qWO-p0-GMl">
@@ -397,11 +401,15 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KM5-pq-Ogt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="864" y="584"/>
+            <point key="canvasLocation" x="1617" y="570"/>
         </scene>
     </scenes>
     <resources>
         <image name="logoTienda" width="225" height="225"/>
         <image name="madridIcon" width="179" height="179"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="t4G-Ga-iEa"/>
+        <segue reference="XrJ-5G-c5p"/>
+    </inferredMetricsTieBreakers>
 </document>

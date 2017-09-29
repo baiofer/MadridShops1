@@ -24,6 +24,7 @@
 		0236579B1F7CFBB800EACEA8 /* Activities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0236579A1F7CFBB800EACEA8 /* Activities.swift */; };
 		0260127E1F7D6867001DFD67 /* InternetConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0260127D1F7D6867001DFD67 /* InternetConnection.swift */; };
 		026012801F7D980D001DFD67 /* MapNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0260127F1F7D980D001DFD67 /* MapNote.swift */; };
+		026012861F7EA0BA001DFD67 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 026012851F7EA0BA001DFD67 /* MapKit.framework */; };
 		029B0C921F7D0A880015BE6C /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 029B0C911F7D0A880015BE6C /* CoreData.framework */; };
 		029B0C981F7D4BCD0015BE6C /* ShopCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029B0C971F7D4BCD0015BE6C /* ShopCell.swift */; };
 		029B0C9A1F7D4C0A0015BE6C /* ActivityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029B0C991F7D4C0A0015BE6C /* ActivityCell.swift */; };
@@ -72,6 +73,7 @@
 		0236579A1F7CFBB800EACEA8 /* Activities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activities.swift; sourceTree = "<group>"; };
 		0260127D1F7D6867001DFD67 /* InternetConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternetConnection.swift; sourceTree = "<group>"; };
 		0260127F1F7D980D001DFD67 /* MapNote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapNote.swift; sourceTree = "<group>"; };
+		026012851F7EA0BA001DFD67 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		029B0C911F7D0A880015BE6C /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		029B0C971F7D4BCD0015BE6C /* ShopCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopCell.swift; sourceTree = "<group>"; };
 		029B0C991F7D4C0A0015BE6C /* ActivityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCell.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				029B0C921F7D0A880015BE6C /* CoreData.framework in Frameworks */,
+				026012861F7EA0BA001DFD67 /* MapKit.framework in Frameworks */,
 				31E2F94B7984E031B61D2761 /* Pods_MadridShops1.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -221,6 +224,7 @@
 		029B0C901F7D0A880015BE6C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				026012851F7EA0BA001DFD67 /* MapKit.framework */,
 				029B0C911F7D0A880015BE6C /* CoreData.framework */,
 				2F2DB7EB9C0306E5418523DA /* Pods_MadridShops1.framework */,
 			);
@@ -327,6 +331,11 @@
 					023657601F7CED3400EACEA8 = {
 						CreatedOnToolsVersion = 9.0;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					023657771F7CED3400EACEA8 = {
 						CreatedOnToolsVersion = 9.0;

@@ -23,8 +23,10 @@ class Note: NSObject, MKAnnotation {
     }
 }
 
-public func addLocation(latitude: String, longitude: String, map: MKMapView, title: String, subtitle: String, adjust: Double) {
-    let location = CLLocation(latitude: Double(latitude)!, longitude: Double(longitude)!)
+public func addLocation(latitude: String?, longitude: String?, map: MKMapView, title: String, subtitle: String, adjust: Double) {
+    guard let lat = latitude else { return }
+    guard let lon = longitude else { return }
+    let location = CLLocation(latitude: Double(lat)!, longitude: Double(lon)!)
     map.setCenter(location.coordinate, animated: true)
     
     let region = MKCoordinateRegion(center: location.coordinate, span: MKCoordinateSpan(latitudeDelta: adjust, longitudeDelta: adjust))

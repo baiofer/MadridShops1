@@ -46,6 +46,7 @@ class ActivitiesViewController: UIViewController, MKMapViewDelegate {
         locationManager = CLLocationManager()
         locationManager?.requestWhenInUseAuthorization()
         self.activitiesMap.delegate = self as MKMapViewDelegate
+        self.locationManager?.startUpdatingLocation()
         
         addLocations()
         
@@ -62,20 +63,51 @@ class ActivitiesViewController: UIViewController, MKMapViewDelegate {
             let activityCD: ActivityCD = sender as! ActivityCD
             vc.activity = activityCD
         }
+        if (segue.identifier == "ShowActivityDetailSegueFromAnnotation") {
+            let vc1 = segue.destination as! ActivityDetailViewController
+            let activityCD: ActivityCD = sender as! ActivityCD
+            vc1.activity = activityCD
+        }
     }
     
+    func getActivity(name: String) -> ActivityCD {
+        let fetchRequest1: NSFetchRequest<ActivityCD> = ActivityCD.fetchRequest()
+        fetchRequest1.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
+        let fetchedResultsController1 = NSFetchedResultsController(fetchRequest: fetchRequest1, managedObjectContext: self.context!, sectionNameKeyPath: nil, cacheName: nil)
+        do {
+            try fetchedResultsController1.performFetch()
+        } catch {
+            let nserror = error as NSError
+            fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+        }
+        let consulta: [ActivityCD] = fetchedResultsController1.fetchedObjects!
+        let activity = consulta.filter { (activity) -> Bool in
+            return activity.name == name
+        }
+        return activity[0]
+    }
+
     func addLocations() {
         
-        let londonLocation = CLLocation(latitude: 51.5073509, longitude: -0.1277583)
-        self.activitiesMap.setCenter(londonLocation.coordinate, animated: true)
+        let madridLocation = CLLocation(latitude: 40.41889, longitude: -3.69194)
+        self.activitiesMap.setCenter(madridLocation.coordinate, animated: true)
         
-        let region = MKCoordinateRegion(center: londonLocation.coordinate, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
+        let region = MKCoordinateRegion(center: madridLocation.coordinate, span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1))
         let reg = self.activitiesMap.regionThatFits(region)
         self.activitiesMap.setRegion(reg, animated: true)
         
-        
-        let n=Note(coordinate: londonLocation.coordinate, title: "Hello", subtitle: "Hello sub")
-        self.activitiesMap.addAnnotation(n)
+        for i in 0 ..< self.fetchedResultsController.sections![0].numberOfObjects {
+            let index = IndexPath(row: i, section: 0)
+            let activity: ActivityCD = fetchedResultsController.object(at: index)
+            let location = CLLocation(latitude: Double(activity.latitude!)!, longitude: Double(activity.longitude!)!)
+            let note = Note(coordinate: location.coordinate, title: activity.name!, subtitle: activity.address!)
+            activitiesMap.addAnnotation(note)
+        }
     }
-
+    
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        print(view)
+        let activity = getActivity(name: view.annotation?.title as! String)
+        self.performSegue(withIdentifier: "ShowActivityDetailSegueFromAnnotation", sender: activity)
+    }
 }
