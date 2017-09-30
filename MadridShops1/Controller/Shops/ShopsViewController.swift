@@ -105,7 +105,6 @@ class ShopsViewController: UIViewController, MKMapViewDelegate {
     }
     
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
-        print(view)
         let shop = getShop(name: view.annotation?.title as! String)
         self.performSegue(withIdentifier: "ShowShopDetailSegueFromAnnotation", sender: shop)
     }

@@ -41,6 +41,8 @@ func parseShops(data: Data, context: NSManagedObjectContext ) -> Void {
             shop.longitude = long2
             guard let sh7 = shopJson["opening_hours_es"] else { return }
             shop.openingHours = sh7 as? String
+            guard let sh8 = shopJson["description_en"] else { return }
+            shop.desc_en = sh8 as? String
             
             shops.add(shop: shop)
             saveContext(context: context)
@@ -81,6 +83,8 @@ func parseActivities(data: Data, context: NSManagedObjectContext) -> Void {
             activity.longitude = long2
             guard let ac6 = activityJson["opening_hours_es"] else { return }
             activity.openingHours = ac6 as? String
+            guard let ac7 = activityJson["description_en"] else { return }
+            activity.desc_en = ac7 as? String
             
             activities.add(activity: activity)
             saveContext(context: context)

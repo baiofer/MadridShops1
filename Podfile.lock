@@ -1,14 +1,26 @@
 PODS:
+  - Colloc (1.0.1)
   - SDWebImage (4.1.0):
     - SDWebImage/Core (= 4.1.0)
   - SDWebImage/Core (4.1.0)
 
 DEPENDENCIES:
+  - Colloc (from `https://github.com/mobilejazz/Colloc.git`)
   - SDWebImage (~> 4.0)
 
+EXTERNAL SOURCES:
+  Colloc:
+    :git: https://github.com/mobilejazz/Colloc.git
+
+CHECKOUT OPTIONS:
+  Colloc:
+    :commit: 01d7af0b8b79fb4745f66ccfd169ee740985875d
+    :git: https://github.com/mobilejazz/Colloc.git
+
 SPEC CHECKSUMS:
+  Colloc: 2a27360712bbc062384e502f0b72b1b54c7d4ce6
   SDWebImage: 0e435c14e402a6730315a0fb79f95e68654d55a4
 
-PODFILE CHECKSUM: 9b31bcd252d814dc610166373a43d70295b11694
+PODFILE CHECKSUM: 9809695d20587cfacdcb71f68bd0e34e1002f044
 
 COCOAPODS: 1.3.1

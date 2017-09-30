@@ -21,7 +21,12 @@ class ActivityDetailViewController: UIViewController {
         super.viewDidLoad()
 
         self.title = self.activity?.name
-        self.activityDetailText.text = self.activity?.desc
+        let pre = NSLocale.preferredLanguages[0]
+        if pre == "en" {
+            self.activityDetailText.text = self.activity?.desc_en
+        } else {
+            self.activityDetailText.text = self.activity?.desc
+        }
         self.activity?.image?.loadImage(into: activityDetailImage)
         
         addLocation(latitude: (activity?.latitude)!, longitude: (activity?.longitude)!, map: activityDetailMap, title: (activity?.name)!, subtitle: (activity?.address)!, adjust: 0.005)

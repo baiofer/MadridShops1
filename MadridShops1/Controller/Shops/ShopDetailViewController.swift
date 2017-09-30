@@ -21,7 +21,12 @@ class ShopDetailViewController: UIViewController {
         super.viewDidLoad()
 
         self.title = self.shop?.name
-        self.shopDetailText.text = self.shop?.desc
+        let pre = NSLocale.preferredLanguages[0]
+        if pre == "en" {
+            self.shopDetailText.text = self.shop?.desc_en
+        } else {
+            self.shopDetailText.text = self.shop?.desc
+        }
         self.shop?.image?.loadImage(into: shopDetailImage)
         
         addLocation(latitude: (shop?.latitude)!, longitude: (shop?.longitude)!, map: shopDetailMap, title: (shop?.name)!, subtitle: (shop?.address)!, adjust: 0.005)

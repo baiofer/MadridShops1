@@ -3,6 +3,7 @@
     <entity name="ActivityCD" representedClassName="ActivityCD" syncable="YES" codeGenerationType="class">
         <attribute name="address" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="desc_en" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="image" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="imageCache" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="latitude" optional="YES" attributeType="String" syncable="YES"/>
@@ -15,6 +16,7 @@
     <entity name="ShopCD" representedClassName="ShopCD" syncable="YES" codeGenerationType="class">
         <attribute name="address" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="desc_en" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="image" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="imageCache" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="latitude" optional="YES" attributeType="String" syncable="YES"/>
@@ -25,7 +27,7 @@
         <attribute name="openingHours" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="ActivityCD" positionX="-54" positionY="-9" width="128" height="195"/>
-        <element name="ShopCD" positionX="-63" positionY="-18" width="128" height="195"/>
+        <element name="ActivityCD" positionX="-54" positionY="-9" width="128" height="210"/>
+        <element name="ShopCD" positionX="-63" positionY="-18" width="128" height="210"/>
     </elements>
 </model>

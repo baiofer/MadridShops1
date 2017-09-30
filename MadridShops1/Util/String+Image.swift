@@ -25,6 +25,5 @@ extension String {
             }
             task.resume()
         }
-        
     }
 }

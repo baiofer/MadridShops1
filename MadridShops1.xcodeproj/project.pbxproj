@@ -34,6 +34,7 @@
 		029B0CA21F7D5B030015BE6C /* ExecuteOneInteractorImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029B0CA11F7D5B030015BE6C /* ExecuteOneInteractorImplementation.swift */; };
 		029B0CA41F7D5B360015BE6C /* SetExecutedOneInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029B0CA31F7D5B360015BE6C /* SetExecutedOneInteractor.swift */; };
 		029B0CA61F7D5B670015BE6C /* SetExecutedOneInteractorImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029B0CA51F7D5B670015BE6C /* SetExecutedOneInteractorImplementation.swift */; };
+		02A5B1B21F7EF73D00AEE6F9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 02A5B1B41F7EF73D00AEE6F9 /* Localizable.strings */; };
 		02CE17291F7CFEE600EA6C36 /* DownloadAllInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02CE17281F7CFEE600EA6C36 /* DownloadAllInteractor.swift */; };
 		02CE172C1F7CFF5E00EA6C36 /* Typealias.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02CE172B1F7CFF5E00EA6C36 /* Typealias.swift */; };
 		02CE172E1F7D003000EA6C36 /* DownloadAllInteractorNSURLSessionImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02CE172D1F7D003000EA6C36 /* DownloadAllInteractorNSURLSessionImplementation.swift */; };
@@ -83,6 +84,10 @@
 		029B0CA11F7D5B030015BE6C /* ExecuteOneInteractorImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExecuteOneInteractorImplementation.swift; sourceTree = "<group>"; };
 		029B0CA31F7D5B360015BE6C /* SetExecutedOneInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetExecutedOneInteractor.swift; sourceTree = "<group>"; };
 		029B0CA51F7D5B670015BE6C /* SetExecutedOneInteractorImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetExecutedOneInteractorImplementation.swift; sourceTree = "<group>"; };
+		02A5B1AE1F7EF6D800AEE6F9 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
+		02A5B1AF1F7EF6D900AEE6F9 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		02A5B1B31F7EF73D00AEE6F9 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		02A5B1B51F7EF73F00AEE6F9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		02CE17281F7CFEE600EA6C36 /* DownloadAllInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadAllInteractor.swift; sourceTree = "<group>"; };
 		02CE172B1F7CFF5E00EA6C36 /* Typealias.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typealias.swift; sourceTree = "<group>"; };
 		02CE172D1F7D003000EA6C36 /* DownloadAllInteractorNSURLSessionImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadAllInteractorNSURLSessionImplementation.swift; sourceTree = "<group>"; };
@@ -138,11 +143,12 @@
 			children = (
 				023657641F7CED3400EACEA8 /* AppDelegate.swift */,
 				029B0C931F7D0AFB0015BE6C /* Util */,
-				023657891F7CED5C00EACEA8 /* Controller */,
-				023657881F7CED5600EACEA8 /* View */,
 				023657871F7CED4100EACEA8 /* Model */,
+				023657881F7CED5600EACEA8 /* View */,
+				023657891F7CED5C00EACEA8 /* Controller */,
 				0236576E1F7CED3400EACEA8 /* Assets.xcassets */,
 				023657731F7CED3400EACEA8 /* Info.plist */,
+				02A5B1B41F7EF73D00AEE6F9 /* Localizable.strings */,
 			);
 			path = MadridShops1;
 			sourceTree = "<group>";
@@ -242,18 +248,10 @@
 			path = Util;
 			sourceTree = "<group>";
 		};
-		029B0CA71F7D5BB30015BE6C /* Cache Interactors */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "Cache Interactors";
-			sourceTree = "<group>";
-		};
 		02CE172A1F7CFF3F00EA6C36 /* Interactors */ = {
 			isa = PBXGroup;
 			children = (
 				0294E9CF1F7D6044008D3907 /* ExecuteOne Interactors */,
-				029B0CA71F7D5BB30015BE6C /* Cache Interactors */,
 				02CE17281F7CFEE600EA6C36 /* DownloadAllInteractor.swift */,
 				02CE172D1F7D003000EA6C36 /* DownloadAllInteractorNSURLSessionImplementation.swift */,
 			);
@@ -369,6 +367,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				023657721F7CED3400EACEA8 /* LaunchScreen.storyboard in Resources */,
+				02A5B1B21F7EF73D00AEE6F9 /* Localizable.strings in Resources */,
 				0236576F1F7CED3400EACEA8 /* Assets.xcassets in Resources */,
 				0236576A1F7CED3400EACEA8 /* Main.storyboard in Resources */,
 			);
@@ -424,10 +423,12 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-MadridShops1/Pods-MadridShops1-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Colloc/Colloc.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Colloc.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -493,6 +494,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				023657691F7CED3400EACEA8 /* Base */,
+				02A5B1AE1F7EF6D800AEE6F9 /* es */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -501,8 +503,18 @@
 			isa = PBXVariantGroup;
 			children = (
 				023657711F7CED3400EACEA8 /* Base */,
+				02A5B1AF1F7EF6D900AEE6F9 /* es */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		02A5B1B41F7EF73D00AEE6F9 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				02A5B1B31F7EF73D00AEE6F9 /* es */,
+				02A5B1B51F7EF73F00AEE6F9 /* en */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -512,6 +524,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -569,6 +582,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -628,7 +642,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.Jarzasa.MadridShops1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -645,7 +659,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.Jarzasa.MadridShops1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

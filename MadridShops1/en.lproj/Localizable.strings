@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  MadridShops1
+
+  Created by Fernando Jarilla on 29/9/17.
+  Copyright © 2017 Jarzasa. All rights reserved.
+*/
+"Unresolved error \(error), \(error.userInfo)" = "Unresolved error \(error), \(error.userInfo)";
+"Error parsing JSON" = "Error parsing JSON";
+"No hay conexión a internet" = "Conexion failed";
+"Cargando datos de internet" = "Loading ...";
