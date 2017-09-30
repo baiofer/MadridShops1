@@ -7,5 +7,5 @@
 */
 "Unresolved error \(error), \(error.userInfo)" = "Unresolved error \(error), \(error.userInfo)";
 "Error parsing JSON" = "Error parsing JSON";
-"No hay conexión a internet" = "Conexion failed";
-"Cargando datos de internet" = "Loading ...";
+"Conexion failed" = "Conexion failed";
+"Loading ..." = "Loading ...";

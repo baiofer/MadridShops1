@@ -1,15 +1,14 @@
 //
-//  MadridShops1Tests.swift
+//  ShopsTests.swift
 //  MadridShops1Tests
 //
-//  Created by Fernando Jarilla on 28/9/17.
+//  Created by Fernando Jarilla on 30/9/17.
 //  Copyright © 2017 Jarzasa. All rights reserved.
 //
 
 import XCTest
-@testable import MadridShops1
 
-class MadridShops1Tests: XCTestCase {
+class ShopsTests: XCTestCase {
     
     override func setUp() {
         super.setUp()

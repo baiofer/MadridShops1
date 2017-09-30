@@ -23,7 +23,7 @@ class MainViewController: UIViewController {
 
         self.activity.isHidden = true
         ExecuteOneInteractorImplementation().execute {
-            self.messageLabel.text = "No hay conexión a internet"
+            self.messageLabel.text = "Connexion failed"
             self.shopsButton.alpha = 0
             self.activitiesButton.alpha = 0
             activity.isHidden = false

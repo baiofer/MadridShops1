@@ -13,7 +13,6 @@
 		0236576D1F7CED3400EACEA8 /* MadridShops1.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0236576B1F7CED3400EACEA8 /* MadridShops1.xcdatamodeld */; };
 		0236576F1F7CED3400EACEA8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0236576E1F7CED3400EACEA8 /* Assets.xcassets */; };
 		023657721F7CED3400EACEA8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 023657701F7CED3400EACEA8 /* LaunchScreen.storyboard */; };
-		0236577D1F7CED3500EACEA8 /* MadridShops1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0236577C1F7CED3500EACEA8 /* MadridShops1Tests.swift */; };
 		0236578B1F7CEE7E00EACEA8 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0236578A1F7CEE7E00EACEA8 /* MainViewController.swift */; };
 		0236578D1F7CEE9D00EACEA8 /* ActivitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0236578C1F7CEE9D00EACEA8 /* ActivitiesViewController.swift */; };
 		0236578F1F7CEEC800EACEA8 /* ShopDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0236578E1F7CEEC800EACEA8 /* ShopDetailViewController.swift */; };
@@ -62,7 +61,6 @@
 		023657711F7CED3400EACEA8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		023657731F7CED3400EACEA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		023657781F7CED3400EACEA8 /* MadridShops1Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MadridShops1Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		0236577C1F7CED3500EACEA8 /* MadridShops1Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MadridShops1Tests.swift; sourceTree = "<group>"; };
 		0236577E1F7CED3500EACEA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0236578A1F7CEE7E00EACEA8 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		0236578C1F7CEE9D00EACEA8 /* ActivitiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesViewController.swift; sourceTree = "<group>"; };
@@ -156,7 +154,6 @@
 		0236577B1F7CED3500EACEA8 /* MadridShops1Tests */ = {
 			isa = PBXGroup;
 			children = (
-				0236577C1F7CED3500EACEA8 /* MadridShops1Tests.swift */,
 				0236577E1F7CED3500EACEA8 /* Info.plist */,
 			);
 			path = MadridShops1Tests;
@@ -475,7 +472,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0236577D1F7CED3500EACEA8 /* MadridShops1Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
