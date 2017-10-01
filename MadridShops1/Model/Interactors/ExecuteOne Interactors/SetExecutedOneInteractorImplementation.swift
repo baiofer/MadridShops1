@@ -11,9 +11,7 @@ import Foundation
 class SetExecutedOnceInteractorImplementation: SetExecutedOnceInteractor {
     func execute() {
         let defaults = UserDefaults.standard
-        
         defaults.set("SAVED", forKey: "once")
-        
         defaults.synchronize()
     }
 }

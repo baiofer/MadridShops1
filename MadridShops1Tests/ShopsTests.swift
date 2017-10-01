@@ -2,34 +2,69 @@
 //  ShopsTests.swift
 //  MadridShops1Tests
 //
-//  Created by Fernando Jarilla on 30/9/17.
+//  Created by Fernando Jarilla on 1/10/17.
 //  Copyright © 2017 Jarzasa. All rights reserved.
 //
 
 import XCTest
+import CoreData
+@testable import MadridShops1
 
 class ShopsTests: XCTestCase {
-    
+
+    var shops = Shops()
+
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
     }
     
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
-    
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    func setUpInMemoryManagedObjectContext() -> NSManagedObjectContext {
+        let managedObjectModel = NSManagedObjectModel.mergedModel(from: [Bundle.main])!
+        let persistentStoreCoordinator = NSPersistentStoreCoordinator(managedObjectModel: managedObjectModel)
+        
+        do {
+            try persistentStoreCoordinator.addPersistentStore(ofType: NSInMemoryStoreType, configurationName: nil, at: nil, options: nil)
+        } catch {
+            print("Adding in-memory persistent store failed")
         }
+        
+        let managedObjectContext = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
+        managedObjectContext.persistentStoreCoordinator = persistentStoreCoordinator
+        
+        return managedObjectContext
     }
     
+    func testShopsExistance() {
+        XCTAssertNotNil(shops)
+    }
+    
+    func testShopsCount() {
+        let context1 = setUpInMemoryManagedObjectContext()
+        //let entity = NSEntityDescription.insertNewObject(forEntityName: "EntityName", into: context1)
+        
+        let shop5 = ShopCD(context: context1)
+        shop5.name = "Super BM"
+        shops.add(shop: shop5)
+        XCTAssertEqual(shops.count(), 1)
+    }
+    
+    func testShopsAdd() {
+        let context1 = setUpInMemoryManagedObjectContext()
+        let shop5 = ShopCD(context: context1)
+        shop5.name = "Super BM"
+        shops.add(shop: shop5)
+        let shop6 = ShopCD(context: context1)
+        shop6.name = "El Corte Inglés"
+        shops.add(shop: shop6)
+        XCTAssertEqual(shops.count(), 2)
+    }
+    
+    func testShopsGet() {
+        let context1 = setUpInMemoryManagedObjectContext()
+        let shop5 = ShopCD(context: context1)
+        shop5.name = "Super BM"
+        shops.add(shop: shop5)
+        let shopName = shops.get(index: 0).name
+        XCTAssertEqual(shopName, "Super BM")
+    }
 }

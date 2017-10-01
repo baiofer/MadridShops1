@@ -33,6 +33,6 @@ public class Shops: ShopsProtocol {
     public func get(index: Int) -> ShopCD {
         return (shopsList?[index])!
     }
-    
-    
+ 
 }
+

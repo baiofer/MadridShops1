@@ -37,7 +37,7 @@ class MainViewController: UIViewController {
                     network = isConnectedToNetwork()
                 }
                 OperationQueue.main.addOperation {
-                    self.messageLabel.text = "Cargando datos de internet"
+                    self.messageLabel.text = "Loading ..."
                     self.initializeData()
                 }
             }

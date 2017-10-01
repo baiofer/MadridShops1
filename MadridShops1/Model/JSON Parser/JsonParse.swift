@@ -15,7 +15,7 @@ func parseShops(data: Data, context: NSManagedObjectContext ) -> Void {
     do{
         let jsonObject = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.allowFragments) as! Dictionary<String, Any>
         let result = jsonObject["result"] as! [Dictionary<String, Any>]
-        
+
         for shopJson in result {
             let shop = ShopCD(context: context)
             shop.name = shopJson["name"] as? String
@@ -57,7 +57,7 @@ func parseActivities(data: Data, context: NSManagedObjectContext) -> Void {
     do{
         let jsonObject = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.allowFragments) as! Dictionary<String, Any>
         let result = jsonObject["result"] as! [Dictionary<String, Any>]
-        
+
         for activityJson in result {
             let activity = ActivityCD(context: context)
             activity.name = activityJson["name"]! as? String
